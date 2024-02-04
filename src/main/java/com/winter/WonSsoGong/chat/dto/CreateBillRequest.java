@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class ContentRequest {
+public class CreateBillRequest {
 
     private String keyWord;
 

@@ -1,7 +1,7 @@
 package com.winter.WonSsoGong.chat.controller;
 
 import com.winter.WonSsoGong.chat.dto.ChatGptResponse;
-import com.winter.WonSsoGong.chat.dto.ContentRequest;
+import com.winter.WonSsoGong.chat.dto.CreateBillRequest;
 import com.winter.WonSsoGong.chat.service.CustomChatBotService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +14,8 @@ public class CustomChatBotController {
     private final CustomChatBotService customChatBotService;
 
     @PostMapping("/bot")
-    public ResponseEntity<ChatGptResponse> getChatGptResponse(@RequestBody ContentRequest contentRequest) {
-        ChatGptResponse chatGptResponse = customChatBotService.getChatGptResponse(contentRequest);
+    public ResponseEntity<String> createBill(@RequestBody CreateBillRequest createBillRequest) {
+        String chatGptResponse = customChatBotService.createBill(createBillRequest);
 
         return ResponseEntity.ok().body(chatGptResponse);
     }
